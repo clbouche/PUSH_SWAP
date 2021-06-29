@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 11:56:59 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/28 19:46:19 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/29 16:09:21 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,8 +127,8 @@ t_dlist	*ft_dlstadd_back(t_dlist *lst, int content, int index);
 t_dlist	*ft_dlstadd_front(t_dlist *lst, int content, int index);
 void	print_dlist(t_dlist *lst);
 void	ft_dlstdelone(t_node *node);
-t_dlist	*ft_dlstdelone_back(t_dlist *lst);
-t_dlist *ft_dlstdelone_front(t_dlist *lst);
+void	ft_dlstdelone_back(t_dlist *lst);
+void	ft_dlstdelone_front(t_dlist *lst);
 t_dlist	*ft_dlstclear(t_dlist *lst);
 
 #endif

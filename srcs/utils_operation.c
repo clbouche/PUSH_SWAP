@@ -6,15 +6,16 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 15:25:57 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/28 19:52:02 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:46:33 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	command_both(void f(t_dlist *, t_dlist *), int iter, t_dlist *stack_a, t_dlist *stack_b)
+void	command_both(void f(t_dlist *, t_dlist *), int iter,
+			t_dlist *stack_a, t_dlist *stack_b)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < iter)

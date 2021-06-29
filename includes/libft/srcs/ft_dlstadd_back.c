@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:04:57 by claclou           #+#    #+#             */
-/*   Updated: 2021/06/28 19:46:58 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/29 16:00:20 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_dlist	*ft_dlstadd_back(t_dlist *lst, int content, int index)
 {
-	t_node *new_node;
+	t_node	*new_node;
 
 	new_node = (t_node *)malloc(sizeof(t_node));
 	if (new_node == NULL || lst == NULL)

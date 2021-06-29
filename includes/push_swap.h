@@ -46,7 +46,9 @@ void		case_of_three(t_dlist *stack_a, t_dlist *stack_b);
 void		case_of_four_and_five(t_dlist *stack_a, t_dlist *stack_b);
 
 /*______utils______*/
+int			compare_min(int a, int b);
 int			check_min(t_dlist *stack, int len);
+int			compare_max(int a, int b);
 int			check_max(t_dlist *stack, int len);
 
 /*_____ALGO____*/
@@ -56,18 +58,22 @@ t_dlist		*bubble_sort_cpy(t_dlist *cpy);
 void		put_index_to_copy(t_dlist *cpy);
 void		put_index_on_stack(t_dlist *stack_a, t_dlist *cpy);
 int			check_true(t_dlist *stack);
-void		put_false_on_stack_b(t_dlist *stack_a, t_dlist *stack_b, int size_sorted_part);
-t_node		*calculate_best_actions(t_dlist *stack_a, t_dlist *stack_b, t_params *actions);
+void		put_false_on_stack_b(t_dlist *stack_a,
+				t_dlist *stack_b, int size_sorted_part);
+t_node		*calculate_best_actions(t_dlist *stack_a,
+				t_dlist *stack_b, t_params *actions);
+void		recup_move(t_params *actions);
 void		do_actions(t_dlist *stack_a, t_dlist *stack_b, t_params *actions);
-void		optimize_mins(t_dlist *stack_a, t_dlist *stack_b, t_params *actions);
-
+void		optimize_mins(t_dlist *stack_a, t_dlist *stack_b,
+				t_params *actions);
+int			return_absolute_value(int x);
 
 /*_________OPERATIONS________*/
 void		swap(t_dlist *stack, char *cmd);
 void		rotate(t_dlist *stack, char *cmd);
-void		rotate_both(t_dlist *stack_a, t_dlist *stack_b);
+void		rotate_both(t_dlist *stack_a, t_dlist *stack_b, char *cmd);
 void		reverse_rotate(t_dlist *stack, char *cmd);
-void		reverse_rotate_both(t_dlist *stack_a, t_dlist *stack_b);
+void		reverse_rotate_both(t_dlist *stack_a, t_dlist *stack_b, char *cmd);
 void		push(t_dlist *src, t_dlist *dst, char *cmd);
 
 /*_____utils____*/
@@ -75,7 +81,7 @@ void		command(void f(t_dlist *, char *), int iter,
 				t_dlist *stack, char *cmd);
 void		command_push(void f(t_dlist *, t_dlist *, char *),
 				int iter, t_dlist *stack_a, t_dlist *stack_b, char *cmd);
-void	command_both(void f(t_dlist *, t_dlist *), int iter,
+void		command_both(void f(t_dlist *, t_dlist *), int iter,
 				t_dlist *stack_a, t_dlist *stack_b);
 int			smallest_on_top(t_dlist	*stack);
 int			top_or_bottom(t_dlist *stack_a, int value);

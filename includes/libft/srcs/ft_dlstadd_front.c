@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:06:58 by claclou           #+#    #+#             */
-/*   Updated: 2021/06/28 19:47:13 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:13:16 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_dlist	*ft_dlstadd_front(t_dlist *lst, int content, int index)
 	}
 	else
 	{
-		lst->end->prev = new_node;
+		lst->begin->prev = new_node;
 		new_node->next = lst->begin;
 		lst->begin = new_node;
 	}

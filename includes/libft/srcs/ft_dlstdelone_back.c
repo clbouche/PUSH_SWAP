@@ -6,13 +6,13 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:08:40 by claclou           #+#    #+#             */
-/*   Updated: 2021/06/28 18:05:19 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/29 14:49:45 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-t_dlist	*ft_dlstdelone_back(t_dlist *lst)
+void	ft_dlstdelone_back(t_dlist *lst)
 {
 	t_node	*end;
 
@@ -22,12 +22,11 @@ t_dlist	*ft_dlstdelone_back(t_dlist *lst)
 	{
 		lst = NULL;
 		free(lst);
-		return (NULL);
+		return ;
 	}
 	end = lst->end;
 	lst->end = lst->end->prev;
 	lst->end->next = NULL;
 	ft_dlstdelone(end);
 	lst->len -= 1;
-	return (lst);
 }

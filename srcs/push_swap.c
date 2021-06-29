@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:41:38 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/28 18:37:34 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:12:58 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,6 @@ int	main(int ac, char **av)
 	check_input(ac, av, stack_a);
 	stack_b = init_stack(stack_b);
 	ft_push_swap(stack_a, stack_b, ac);
-	printf("voici la liste a :\n");
-	print_dlist(stack_a);
-	printf("_________\n");
-	if (stack_b)
-	{
-		printf("voici la liste b :\n");
-		print_dlist(stack_b);
-		printf("_________\n");
-	}
 	free(stack_a);
 	if (stack_b)
 		free(stack_b);

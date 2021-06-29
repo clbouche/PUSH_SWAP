@@ -6,13 +6,33 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 18:40:52 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/28 19:35:25 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:48:30 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		sequence_size(t_node *begin_sorted_part, t_dlist *stack, bool define)
+void	put_false_on_stack_b(t_dlist *stack_a, t_dlist *stack_b,
+			int size_sorted_part)
+{
+	int		future_size_stack_b;
+	t_node	*temp;
+
+	future_size_stack_b = stack_a->len - size_sorted_part;
+	while (future_size_stack_b > 0)
+	{
+		temp = stack_a->begin;
+		if (temp->keep == false)
+		{
+			command_push(push, 1, stack_a, stack_b, "pb\n");
+			future_size_stack_b--;
+		}
+		else
+			command(rotate, 1, stack_a, "ra\n");
+	}
+}
+
+int	sequence_size(t_node *begin_sorted_part, t_dlist *stack, bool define)
 {
 	t_node	*temp;
 	int		size_sorted_part;
@@ -36,7 +56,7 @@ int		sequence_size(t_node *begin_sorted_part, t_dlist *stack, bool define)
 		if (temp == NULL)
 			temp = stack->begin;
 		if (temp == begin_sorted_part)
-			break;
+			break ;
 	}
 	return (size_sorted_part);
 }
@@ -44,7 +64,7 @@ int		sequence_size(t_node *begin_sorted_part, t_dlist *stack, bool define)
 t_node	*sorted_part(t_dlist *stack)
 {
 	t_node	*temp;
-	t_node	*begin_sorted_part; 
+	t_node	*begin_sorted_part;
 	int		size_sorted_part;
 	int		compare_size_sequence;
 
@@ -63,12 +83,12 @@ t_node	*sorted_part(t_dlist *stack)
 	return (begin_sorted_part);
 }
 
-int		check_true(t_dlist *stack)
+int	check_true(t_dlist *stack)
 {
 	t_node	*begin_sorted_part;
-	int 	size_sorted_part;
+	int		size_sorted_part;
 
 	begin_sorted_part = sorted_part(stack);
-	size_sorted_part  = sequence_size(begin_sorted_part, stack, true); 
-	return(size_sorted_part);
+	size_sorted_part = sequence_size(begin_sorted_part, stack, true);
+	return (size_sorted_part);
 }

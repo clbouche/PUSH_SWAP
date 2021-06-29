@@ -15,7 +15,7 @@ CC = gcc
 CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -Werror
-#CFLAGS += -fsanitize=address
+CFLAGS += -fsanitize=address
 
 ###################
 # PRINT VARIABLES #
@@ -64,10 +64,6 @@ SRCS += sort_algo.c
 SRCS += recover_target_index.c
 SRCS += organize_stack_a.c
 SRCS += calculate_actions.c
-#SRCS += 
-#SRCS += 
-#SRCS += 
-#SRCS += 
 
 vpath %.c $(PATH_SRCS)
 

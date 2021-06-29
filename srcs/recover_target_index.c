@@ -6,30 +6,11 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 18:32:23 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/28 19:46:26 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:46:48 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	put_false_on_stack_b(t_dlist *stack_a, t_dlist *stack_b, int size_sorted_part)
-{
-	int 	future_size_stack_b;
-	t_node	*temp;
-
-	future_size_stack_b = stack_a->len - size_sorted_part;
-	while (future_size_stack_b > 0)
-	{
-		temp = stack_a->begin;
-		if (temp->keep == 0)
-		{
-			command_push(push, 1, stack_a, stack_b, "pb\n");
-			future_size_stack_b--;
-		}
-		else
-			command(rotate, 1, stack_a, "ra\n");
-	}
-}
 
 void	put_index_on_stack(t_dlist *stack_a, t_dlist *cpy)
 {
@@ -47,7 +28,7 @@ void	put_index_on_stack(t_dlist *stack_a, t_dlist *cpy)
 			{
 				temp_stack->index = temp_cpy->index;
 			}
-			temp_cpy =  temp_cpy->next;
+			temp_cpy = temp_cpy->next;
 		}
 		temp_stack = temp_stack->next;
 	}

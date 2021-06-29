@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:48:15 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/28 18:58:30 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/29 16:09:59 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ t_dlist	*check_if_integer(const char *arg, t_dlist *stack_a)
 		i++;
 	else
 		ft_error(ERR_NUMBER);
-	long_number = atof(arg); //INTERDIIIIIT (faire fonction pr libft)
+	long_number = atof(arg);
 	if (long_number < INT_MAX && long_number > INT_MIN)
 	{
 		number = long_number;
-		ft_dlstadd_back(stack_a, number, 0, 0);
+		ft_dlstadd_back(stack_a, number, 0);
 	}
 	else
 		ft_error(ERR_LIMIT);
