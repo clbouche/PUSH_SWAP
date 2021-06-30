@@ -7,7 +7,6 @@
 # define INT_MIN -2147483648
 # define SUCCESS 1
 # define FAILURE 0
-# define ERR_LINE ""
 
 typedef struct s_params
 {
@@ -24,6 +23,9 @@ typedef struct s_params
 
 /*_______START___________*/
 t_dlist		*init_stack(t_dlist *stack);
+void		free_stack(t_dlist *stack);
+void		ft_error_pswap(t_dlist *stack);
+void		ft_success_pswap(t_dlist *stack);
 
 /*________PARSING________*/
 int			check_input(int ac, char **av, t_dlist *stack_a);
