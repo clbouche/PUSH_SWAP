@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 18:26:28 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/29 15:12:54 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/30 10:12:37 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,13 @@ void	do_actions(t_dlist *stack_a, t_dlist *stack_b, t_params *actions)
 	if ((actions->min_b > 0 && actions->min_a > 0)
 		|| (actions->min_b < 0 && actions->min_a < 0))
 		optimize_mins(stack_a, stack_b, actions);
-	while (actions->min_b > 0)
-	{
-		command(rotate, 1, stack_b, "rb\n");
-		(actions->min_b)--;
-	}
+	command(rotate, actions->min_b, stack_b, "rb\n");
 	while (actions->min_b < 0)
 	{
 		command(reverse_rotate, 1, stack_b, "rrb\n");
 		actions->min_b++;
 	}
-	while (actions->min_a > 0)
-	{
-		command(rotate, 1, stack_a, "ra\n");
-		(actions->min_a)--;
-	}
+	command(rotate, actions->min_a, stack_a, "ra\n");
 	while (actions->min_a < 0)
 	{
 		command(reverse_rotate, 1, stack_a, "rra\n");
@@ -69,7 +61,7 @@ t_params	init_params(t_params actions, t_dlist *stack_b)
 	actions.best = NULL;
 	actions.count_actions_stack_a = 0;
 	actions.count_actions_stack_b = 0;
-	actions.min_move = 0xFFFFFFF;
+	actions.min_move = INT_MAX;
 	actions.total_moves = 0;
 	actions.min_a = 0;
 	actions.min_b = 0;

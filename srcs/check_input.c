@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:48:15 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/29 16:09:59 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/30 10:11:46 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ int	check_if_double(t_dlist *stack_a, int value)
 
 	node = stack_a->begin;
 	if (stack_a->len == 0)
-		ft_error(ERR_EMPTY);
+		ft_error(ERR_LINE);
 	if (stack_a->len == 1)
 		return (0);
 	while (node != stack_a->end)
 	{
 		if (value == node->value)
-			ft_error(ERR_DOUBLE);
+			ft_error(ERR_LINE);
 		node = node->next;
 	}
 	return (SUCCESS);
@@ -56,7 +56,7 @@ t_dlist	*check_if_integer(const char *arg, t_dlist *stack_a)
 	if (ft_isdigit(arg[i]) == 1)
 		i++;
 	else
-		ft_error(ERR_NUMBER);
+		ft_error(ERR_LINE);
 	long_number = atof(arg);
 	if (long_number < INT_MAX && long_number > INT_MIN)
 	{
@@ -64,7 +64,7 @@ t_dlist	*check_if_integer(const char *arg, t_dlist *stack_a)
 		ft_dlstadd_back(stack_a, number, 0);
 	}
 	else
-		ft_error(ERR_LIMIT);
+		ft_error(ERR_LINE);
 	return (stack_a);
 }
 
@@ -85,6 +85,6 @@ int	check_input(int ac, char **av, t_dlist *stack_a)
 		}
 	}
 	else
-		ft_error(ERR_EXEC);
+		ft_error(ERR_LINE);
 	return (SUCCESS);
 }

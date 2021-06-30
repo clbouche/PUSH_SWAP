@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 19:44:13 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/29 15:54:24 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/30 10:05:13 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_node	*calculate_best_actions(t_dlist *stack_a, t_dlist *stack_b,
 	t_node	*prev;
 
 	actions->count_for_b = 0;
-	actions->min_move = 0xFFFFFFF;
+	actions->min_move = INT_MAX;
 	while (actions->elem)
 	{
 		temp = stack_a->begin->next;

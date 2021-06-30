@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:41:38 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/29 15:12:58 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/30 10:10:38 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_push_swap(t_dlist *stack_a, t_dlist *stack_b, int ac)
 
 	numbers = ac - 1;
 	if (!stack_a)
-		ft_error(ERR_EMPTY);
+		ft_error(ERR_LINE);
 	if (check_order(stack_a))
 		return ;
 	if (numbers <= 5)
@@ -49,7 +49,7 @@ int	main(int ac, char **av)
 	t_dlist		*stack_b;
 
 	if (ac < 2)
-		ft_error(ERR_ARG);
+		ft_error(ERR_LINE);
 	stack_a = init_stack(stack_a);
 	check_input(ac, av, stack_a);
 	stack_b = init_stack(stack_b);
