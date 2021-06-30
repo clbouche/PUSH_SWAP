@@ -15,7 +15,7 @@ CC = gcc
 CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -Werror
-CFLAGS += -fsanitize=address
+#CFLAGS += -fsanitize=address
 
 ###################
 # PRINT VARIABLES #
@@ -50,6 +50,7 @@ INCLUDES += includes/libft/libft.a
 
 PATH_SRCS = srcs
 
+SRCS += manage_errors.c 
 SRCS += push_swap.c
 SRCS += check_input.c
 SRCS += sort_two_and_three.c
