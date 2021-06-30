@@ -6,7 +6,7 @@
 #    By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 13:17:26 by clbouche          #+#    #+#              #
-#    Updated: 2021/06/28 09:25:29 by clbouche         ###   ########.fr        #
+#    Updated: 2021/06/30 10:13:31 by clbouche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ PATH_SRCS = srcs
 # BASICS #
 SRCS += ft_strlen.c
 SRCS += ft_atoi.c
-SRCS += ft_itoa.c
+#SRCS += ft_itoa.c
 SRCS += ft_error.c
 
 # MANIP  STRING #
