@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:41:38 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/30 11:26:38 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/30 12:42:20 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ int	main(int ac, char **av)
 	t_dlist		*stack_a;
 	t_dlist		*stack_b;
 
-	if (ac < 2)
-		ft_error_pswap(stack_a);
 	stack_a = init_stack(stack_a);
 	check_input(ac, av, stack_a);
 	stack_b = init_stack(stack_b);

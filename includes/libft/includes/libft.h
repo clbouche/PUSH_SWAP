@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 11:56:59 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/29 16:09:21 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/30 11:16:29 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define BUFFER_SIZE 1000000
 
 /*____________________ERROR_________________________*/
-# define ERR "Error : "
+# define ERR "Error"
 # define ERR_ALLOC "Dynamic allocation problem."
 # define ERR_EMPTY_DLIST "Nothing to display, the Dlist is empty"
 
@@ -60,7 +60,6 @@ typedef struct s_dlist
 /* BASICS */
 size_t	ft_strlen(const char *s);
 int		ft_atoi(const char *str);
-char	*ft_itoa(int n);
 void	ft_error(char *error);
 void	print_index(t_dlist *stack_a);
 

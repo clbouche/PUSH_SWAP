@@ -6,7 +6,7 @@
 /*   By: clbouche <clbouche@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:48:15 by clbouche          #+#    #+#             */
-/*   Updated: 2021/06/30 11:21:03 by clbouche         ###   ########.fr       */
+/*   Updated: 2021/06/30 12:45:57 by clbouche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,15 @@ t_dlist	*check_if_integer(const char *arg, t_dlist *stack_a)
 	int		i;
 
 	i = 0 ;
-	if (ft_isdigit(arg[i]) == 1)
-		i++;
-	else
-		ft_error_pswap(stack_a);
+	while (arg[i])
+	{
+		if (ft_isdigit(arg[i]) == 1 || arg[i] == '-')
+			i++;
+		else
+			ft_error_pswap(stack_a);
+	}
 	long_number = atof(arg);
-	if (long_number < INT_MAX && long_number > INT_MIN)
+	if (long_number <= INT_MAX && long_number >= INT_MIN)
 	{
 		number = long_number;
 		ft_dlstadd_back(stack_a, number, 0);
@@ -84,7 +87,5 @@ int	check_input(int ac, char **av, t_dlist *stack_a)
 			i++;
 		}
 	}
-	else
-		ft_error_pswap(stack_a);
 	return (SUCCESS);
 }
